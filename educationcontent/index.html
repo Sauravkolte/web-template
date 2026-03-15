@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Content Editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="editor-panel">
+        <div class="header">
+            <h1><i class="fas fa-graduation-cap"></i> Edit Template: Course Content</h1>
+            <div class="nav">
+                <a href="/templete.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Templates</a>
+                <div class="buttons">
+                    <button class="btn btn-outline" id="copy-code"><i class="fas fa-copy"></i> Copy Code</button>
+                    <button class="btn btn-primary" id="fullscreen-preview"><i class="fas fa-eye"></i> Preview</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tabs">
+            <div class="tabs-list">
+                <div class="tab active" data-tab="content">Content</div>
+                <div class="tab" data-tab="modules">Course Modules</div>
+            </div>
+            
+            <div class="tab-content active" id="content-tab">
+                <div class="form-group">
+                    <label class="form-label">Course Title</label>
+                    <input type="text" class="form-control" id="course-title" value="Introduction to Web Development">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Course Subtitle</label>
+                    <input type="text" class="form-control" id="course-subtitle" value="Learn HTML, CSS, and JavaScript fundamentals">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Course Image</label>
+                    <input type="file" class="form-control" id="course-image" accept="image/*">
+                    <div id="image-preview" class="image-preview"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Course Description</label>
+                    <textarea class="form-control" id="course-description" rows="6">This comprehensive course introduces you to the core technologies of web development. You'll learn how to create responsive websites using HTML for structure, CSS for styling, and JavaScript for interactivity. Perfect for beginners!</textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Course Details</label>
+                    <div class="form-group" style="margin-bottom: 0.5rem;">
+                        <input type="text" class="form-control" id="course-duration" value="8 weeks" placeholder="Duration">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 0.5rem;">
+                        <input type="text" class="form-control" id="course-level" value="Beginner" placeholder="Difficulty level">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="course-prerequisites" value="Basic computer skills" placeholder="Prerequisites">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Learning Outcomes (comma separated)</label>
+                    <div class="outcomes" id="outcomes-container">
+                        <!-- Outcomes will be added here -->
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+                        <input type="text" class="form-control" id="new-outcome" placeholder="Add new learning outcome">
+                        <button class="btn btn-outline" id="add-outcome">Add</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="modules-tab">
+                <div class="form-group">
+                    <label class="form-label">Module Type</label>
+                    <select class="form-control" id="module-type">
+                        <option value="lesson">Lesson</option>
+                        <option value="quiz">Quiz</option>
+                        <option value="assignment">Assignment</option>
+                    </select>
+                </div>
+                
+                <div class="course-modules" id="modules-container">
+                    <!-- Course modules will be added here dynamically -->
+                </div>
+                
+                <button class="btn btn-outline" id="add-module" style="margin-top: 1rem;">
+                    <i class="fas fa-plus"></i> Add Module
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="preview-panel">
+        <div class="preview-container">
+            <div class="preview-header">
+                <h3 class="preview-title"><i class="fas fa-eye"></i> Course Preview</h3>
+                <div class="preview-actions">
+                    <button class="" id="refresh-preview">
+                    </button>
+                    <button class="" id="fullscreen-preview">
+                        
+                    </button>
+                </div>
+            </div>
+            
+            <div class="preview-content" id="live-preview">
+                <!-- Preview content will be rendered here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

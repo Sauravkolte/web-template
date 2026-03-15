@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Template Editor: Business Professional</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="editor-panel">
+        <div class="header">
+            <h1><i class="fas fa-edit"></i> Edit Template: Business Professional</h1>
+            <div class="nav">
+                <a href="/templete.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Templates</a>
+                <div class="buttons">
+                    <button class="btn btn-outline" id="copy-code"><i class="fas fa-copy"></i> Copy Code</button>
+                    <button class="btn btn-primary" id="fullscreen-preview"><i class="fas fa-eye"></i> Preview</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tabs">
+            <div class="tabs-list">
+                <div class="tab active" data-tab="content">Content</div>
+                <div class="tab" data-tab="features">Features</div>
+                <div class="tab" data-tab="footer">Footer</div>
+            </div>
+            
+            <div class="tab-content active" id="content-tab">
+                <div class="form-group">
+                    <label class="form-label">Company Name</label>
+                    <input type="text" class="form-control" id="company-name" value="Business Solutions Inc.">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Tagline</label>
+                    <input type="text" class="form-control" id="tagline" value="Providing innovative solutions for your business needs since 2010">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Call to Action Text</label>
+                    <input type="text" class="form-control" id="cta-text" value="Schedule a Consultation">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">About Section Title</label>
+                    <input type="text" class="form-control" id="about-title" value="About Our Company">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">About Content</label>
+                    <textarea class="form-control" id="about-content" rows="6">Business Solutions Inc. is a leading provider of business services helping companies grow and succeed. With over 10 years of experience, we specialize in delivering customized solutions tailored to your specific business needs. Our team of experts has worked with Fortune 500 companies and small businesses alike, bringing the same level of dedication and expertise to every project. We believe in building long-term relationships with our clients based on trust, transparency, and superior results.</textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Features Section Title</label>
+                    <input type="text" class="form-control" id="features-title" value="Our Comprehensive Services">
+                </div>
+            </div>
+            
+            <div class="tab-content" id="features-tab">
+                <div class="features-list" id="features-container">
+                    <!-- Features will be added here dynamically -->
+                </div>
+                
+                <button class="btn btn-outline" id="add-feature" style="margin-top: 1rem;">
+                    <i class="fas fa-plus"></i> Add New Feature
+                </button>
+            </div>
+            
+            <div class="tab-content" id="footer-tab">
+                <div class="form-group">
+                    <label class="form-label">Footer Text</label>
+                    <input type="text" class="form-control" id="footer-text" value="© 2025 Business Solutions Inc. All rights reserved.">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Additional Footer Content</label>
+                    <textarea class="form-control" id="footer-additional" rows="4">Contact us at info@businesssolutions.com | Phone: (123) 456-7890</textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="preview-panel">
+        <div class="preview-container">
+            <div class="preview-header">
+                <h3 class="preview-title"><i class="fas fa-eye"></i> Template Preview</h3>
+                <div class="preview-actions">
+                    <button class="btn btn-outline" id="refresh-preview">
+            
+                    </button>
+                    <button class="btn btn-outline" id="fullscreen-preview">
+                    
+                    </button>
+                </div>
+            </div>
+            
+            <div class="preview-content" id="live-preview">
+                <!-- Preview content will be rendered here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

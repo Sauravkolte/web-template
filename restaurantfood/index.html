@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Menu Editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="editor-panel">
+        <div class="header">
+            <h1><i class="fas fa-utensils"></i> Edit Template: Restaurant Menu</h1>
+            <div class="nav">
+                <a href="/templete.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Templates</a>
+                <div class="buttons">
+                    <button class="btn btn-outline"><i class="fas fa-copy"></i> Copy Code</button>
+                    <button class="btn btn-primary" id="fullscreen-preview"><i class="fas fa-eye"></i> Preview</button>
+
+                </div>
+            </div>
+        </div>
+        
+        <div class="tabs">
+            <div class="tabs-list">
+                <div class="tab active" data-tab="content">Content</div>
+                <div class="tab" data-tab="menu">Menu Items</div>
+            </div>
+            
+            <div class="tab-content active" id="content-tab">
+                <div class="form-group">
+                    <label class="form-label">Restaurant Name</label>
+                    <input type="text" class="form-control" id="restaurant-name" value="Spice Delight">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Tagline</label>
+                    <input type="text" class="form-control" id="restaurant-tagline" value="Authentic Indian flavors, unforgettable experiences">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Logo</label>
+                    <input type="file" class="form-control" id="restaurant-logo" accept="image/*">
+                    <div id="logo-preview" class="image-preview"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Restaurant Description</label>
+                    <textarea class="form-control" id="restaurant-description" rows="6">Welcome to Spice Delight, where we bring you the finest Indian culinary experiences. Our chefs use traditional recipes and fresh ingredients to create dishes that celebrate India's rich food heritage.</textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Contact Information</label>
+                    <div class="form-group" style="margin-bottom: 0.5rem;">
+                        <input type="text" class="form-control" id="restaurant-phone" value="+91 9876543210" placeholder="Phone number">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 0.5rem;">
+                        <input type="text" class="form-control" id="restaurant-address" value="123 Main St, Mumbai" placeholder="Address">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="restaurant-hours" value="Mon-Sun: 11am-11pm" placeholder="Opening hours">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Menu Categories (comma separated)</label>
+                    <div class="categories" id="categories-container">
+                        <!-- Categories will be added here -->
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+                        <input type="text" class="form-control" id="new-category" placeholder="Add new category">
+                        <button class="btn btn-outline" id="add-category">Add</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="menu-tab">
+                <div class="form-group">
+                    <label class="form-label">Category</label>
+                    <select class="form-control" id="menu-category">
+                        <!-- Categories will be added here -->
+                    </select>
+                </div>
+                
+                <div class="menu-items" id="menu-container">
+                    <!-- Menu items will be added here dynamically -->
+                </div>
+                
+                <button class="btn btn-outline" id="add-menu-item" style="margin-top: 1rem;">
+                    <i class="fas fa-plus"></i> Add Menu Item
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <div class="preview-panel">
+        <div class="preview-container">
+            <div class="preview-header">
+                <h3 class="preview-title"><i class="fas fa-eye"></i> Menu Preview</h3>
+                <div class="preview-actions">
+                    <button class="" id="refresh-preview">
+                    
+                    </button>
+                    <button class="" id="fullscreen-preview">
+    
+                    </button>
+                </div>
+            </div>
+            
+            <div class="preview-content" id="live-preview">
+                <!-- Preview content will be rendered here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

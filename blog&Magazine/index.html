@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog & Magazine Editor</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="editor-panel">
+        <div class="header">
+            <h1><i class="fas fa-newspaper"></i> Edit Template: Blog & Magazine</h1>
+            <div class="nav">
+                <a href="/templete.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Templates</a>
+                <div class="buttons">
+                    <button class="btn btn-outline"><i class="fas fa-copy"></i> Copy Code</button>
+                    <button class="btn btn-primary" id="fullscreen-preview"><i class="fas fa-eye"></i> Preview</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="tabs">
+            <div class="tabs-list">
+                <div class="tab active" data-tab="content">Content</div>
+                <div class="tab" data-tab="articles">Articles</div>
+                <div class="tab" data-tab=""></div>
+            </div>
+            
+            <div class="tab-content active" id="content-tab">
+                <div class="form-group">
+                    <label class="form-label">Publication Name</label>
+                    <input type="text" class="form-control" id="publication-name" value="The Daily Chronicle">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Tagline</label>
+                    <input type="text" class="form-control" id="publication-tagline" value="Your source for daily news and insights">
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Logo</label>
+                    <input type="file" class="form-control" id="publication-logo" accept="image/*">
+                    <div id="logo-preview" class="image-preview"></div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Publication Description</label>
+                    <textarea class="form-control" id="publication-description" rows="6">Welcome to The Daily Chronicle, where we bring you the latest news, insightful articles, and thought-provoking content across various topics.</textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Contact Information</label>
+                    <div class="form-group" style="margin-bottom: 0.5rem;">
+                        <input type="text" class="form-control" id="publication-email" value="contact@dailychronicle.com" placeholder="Email">
+                    </div>
+                    <div class="form-group" style="margin-bottom: 0.5rem;">
+                        <input type="text" class="form-control" id="publication-phone" value="+1 (555) 123-4567" placeholder="Phone number">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="publication-address" value="123 Media Street, New York" placeholder="Address">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Categories (comma separated)</label>
+                    <div class="categories" id="categories-container">
+                        <!-- Categories will be added here -->
+                    </div>
+                    <div style="display: flex; gap: 0.5rem; margin-top: 0.5rem;">
+                        <input type="text" class="form-control" id="new-category" placeholder="Add new category">
+                        <button class="btn btn-outline" id="add-category">Add</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="tab-content" id="articles-tab">
+                <div class="form-group">
+                    <label class="form-label">Category Filter</label>
+                    <select class="form-control" id="article-category">
+                        <!-- Categories will be added here -->
+                    </select>
+                </div>
+                
+                <div class="articles-list" id="articles-container">
+                    <!-- Articles will be added here dynamically -->
+                </div>
+                
+                <button class="btn btn-outline" id="add-article" style="margin-top: 1rem;">
+                    <i class="fas fa-plus"></i> Add Article
+                </button>
+            </div>
+            
+            <div class="tab-content" id="layout-tab">
+                <div class="form-group">
+                    <label class="form-label">Layout Style</label>
+                    <select class="form-control" id="layout-style">
+                        <option value="magazine">Magazine Style</option>
+                        <option value="blog">Blog Style</option>
+                        <option value="newspaper">Newspaper Style</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Color Scheme</label>
+                    <select class="form-control" id="color-scheme">
+                        <option value="classic">Classic (Dark Text on Light)</option>
+                        <option value="dark">Dark Mode</option>
+                        <option value="professional">Professional Blue</option>
+                        <option value="vibrant">Vibrant Colors</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Featured Image Position</label>
+                    <select class="form-control" id="image-position">
+                        <option value="top">Top of Article</option>
+                        <option value="left">Left Side</option>
+                        <option value="right">Right Side</option>
+                        <option value="alternate">Alternate Sides</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Font Family</label>
+                    <select class="form-control" id="font-family">
+                        <option value="serif">Serif (Traditional)</option>
+                        <option value="sans-serif">Sans-Serif (Modern)</option>
+                        <option value="monospace">Monospace (Technical)</option>
+                        <option value="custom">Custom Google Font</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="preview-panel">
+        <div class="preview-container">
+            <div class="preview-header">
+                <h3 class="preview-title"><i class="fas fa-eye"></i> Publication Preview</h3>
+                <div class="preview-actions">
+                    <button class="" id="refresh-preview">
+                    </button>
+                    <button class="" id="fullscreen-preview">
+        
+                    </button>
+                </div>
+            </div>
+            
+            <div class="preview-content" id="live-preview">
+                <!-- Preview content will be rendered here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
